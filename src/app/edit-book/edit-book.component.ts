@@ -31,7 +31,7 @@ export class EditBookComponent implements OnInit {
 
     this.editForm = this.formBuilder.group({
       bookTitle: [this.book.bookTitle, Validators.required],
-      bookAuthor: [this.book.bookAuthor, Validators.required],
+      bookAuthor: ['', [Validators.required,  Validators.pattern("^[a-zA-Z]+$")]],
       bookIsbn: [this.book.bookIsbn, Validators.required],
       bookPublishDate: [this.book.bookPublishDate, Validators.required],
       bookPrice: [this.book.bookPrice, [Validators.required, Validators.pattern("^\\d+(?:\\.\\d{1,2})?$")]],

@@ -22,7 +22,7 @@ export class CreateBookComponent implements OnInit {
   ngOnInit() {
     this.createForm = this.formBuilder.group({
       bookTitle: ['', Validators.required],
-      bookAuthor: ['', [Validators.required]],
+      bookAuthor: ['', [Validators.required,  Validators.pattern("^[a-zA-Z]+$")]],
       bookIsbn: ['', Validators.required],
       bookPublishDate: ['', Validators.required],
       bookPrice: ['', [Validators.required, Validators.pattern("^\\d+(?:\\.\\d{1,2})?$")]],

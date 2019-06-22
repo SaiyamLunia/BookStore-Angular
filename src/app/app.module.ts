@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule } from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +29,7 @@ import { ReactiveFormsModule }    from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     Ng2SmartTableModule,
+    MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule
   ],
