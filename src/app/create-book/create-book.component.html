@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row">
+    <div class="center-block">
+      <div class="header1">
+        <h2>
+          Create New Book
+        </h2>
+      </div>
+      <form [formGroup]="createForm">
+        <div class="form-group">
+          <label for="bookIsbn">ISBN:</label>
+          <input placeholder="Book ISBN" name="bookIsbn" class="form-control" id="bookIsbn"
+            [formControl]="createForm.controls.bookIsbn">
+          <span *ngIf="createForm.controls.bookIsbn.invalid && createForm.controls.bookIsbn.touched">Enter ISBN </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bookTitle">Title:</label>
+          <input placeholder="Title" name="bookTitle" class="form-control" id="bookTitle"
+            [formControl]="createForm.controls.bookTitle">
+          <span *ngIf="createForm.controls.bookTitle.invalid && createForm.controls.bookTitle.touched">Enter Title
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bookAuthor">Author:</label>
+          <input placeholder="Author Name" name="bookAuthor" class="form-control" id="bookAuthor"
+            [formControl]="createForm.controls.bookAuthor">
+          <span *ngIf="createForm.controls.bookAuthor.invalid && createForm.controls.bookAuthor.touched">Enter Author Name
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bookPublishDate">Publish Date:</label>
+          <input placeholder="Publish Date" name="bookPublishDate" class="form-control" id="bookPublishDate"
+            [formControl]="createForm.controls.bookPublishDate">
+          <span *ngIf="createForm.controls.bookPublishDate.invalid && createForm.controls.bookPublishDate.touched">Enter
+            Book PublishDate </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bookPrice">Price:</label>
+          <input placeholder="Price" name="bookPrice" class="form-control" id="bookPrice"
+            [formControl]="createForm.controls.bookPrice">
+          <span *ngIf="createForm.controls.bookPrice.invalid && createForm.controls.bookPrice.touched">Enter Valid Book
+            Price </span>
+        </div>
+
+        <div class="form-group">
+          <label for="bookDescription">Description:</label>
+          <input placeholder="Description" name="bookDescription" class="form-control" id="bookDescription"
+            [formControl]="createForm.controls.bookDescription">
+          <span *ngIf="createForm.controls.bookDescription.invalid && createForm.controls.bookDescription.touched">Enter
+            Book Description </span>
+        </div>
+
+        <button class="btn btn-success" (click)="createBook()">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+</form> -->
