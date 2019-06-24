@@ -34,7 +34,9 @@
             <span *ngIf="editForm.controls.bookDescription.invalid && editForm.controls.bookDescription.touched" style="color:red">Enter Book Description </span>
           </div><br>
 
-        <button class="button button2" (click)="editBook()">Update</button>
+        <button class="button button2" [disabled]="!editForm.dirty" (click)="editBook()">Update</button>
+
+
         <div class="form-group">
           <!-- <label for="bookIsbn">ISBN:</label> -->
           <input type="hidden" placeholder="Book ISBN" name="bookIsbn" class="form-control" id="bookIsbn" [formControl]="editForm.controls.bookIsbn">

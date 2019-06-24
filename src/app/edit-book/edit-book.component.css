@@ -66,3 +66,8 @@ input[type=text], select {
     background-color: #008CBA;
     color: white;
   }
+
+  .button2:disabled {
+    color: black;
+    background-color: grey;
+  }
