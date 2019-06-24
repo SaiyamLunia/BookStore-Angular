@@ -8,53 +8,53 @@
       </div>
       <form [formGroup]="createForm">
         <div class="form-group">
-          <label for="bookIsbn">ISBN:</label>
+          <label for="bookIsbn">ISBN  :  </label>
           <input placeholder="Book ISBN" name="bookIsbn" class="form-control" id="bookIsbn"
             [formControl]="createForm.controls.bookIsbn">
-          <span *ngIf="createForm.controls.bookIsbn.invalid && createForm.controls.bookIsbn.touched">Enter ISBN </span>
-        </div>
+          <span *ngIf="createForm.controls.bookIsbn.invalid && createForm.controls.bookIsbn.touched" style="color:red">Enter ISBN </span>
+        </div><br>
 
         <div class="form-group">
-          <label for="bookTitle">Title:</label>
+          <label for="bookTitle">Title  :  </label>
           <input placeholder="Title" name="bookTitle" class="form-control" id="bookTitle"
             [formControl]="createForm.controls.bookTitle">
-          <span *ngIf="createForm.controls.bookTitle.invalid && createForm.controls.bookTitle.touched">Enter Title
+          <span *ngIf="createForm.controls.bookTitle.invalid && createForm.controls.bookTitle.touched" style="color:red">Enter Title
           </span>
-        </div>
+        </div><br>
 
         <div class="form-group">
-          <label for="bookAuthor">Author:</label>
+          <label for="bookAuthor">Author  :  </label>
           <input placeholder="Author Name" name="bookAuthor" class="form-control" id="bookAuthor"
             [formControl]="createForm.controls.bookAuthor">
-          <span *ngIf="createForm.controls.bookAuthor.invalid && createForm.controls.bookAuthor.touched">Enter Author Name
+          <span *ngIf="createForm.controls.bookAuthor.invalid && createForm.controls.bookAuthor.touched" style="color:red">Enter Author Name [must contain alphabets only]
           </span>
-        </div>
+        </div><br>
 
         <div class="form-group">
-          <label for="bookPublishDate">Publish Date:</label>
+          <label for="bookPublishDate">Publish Date  :  </label>
           <input placeholder="Publish Date" name="bookPublishDate" class="form-control" id="bookPublishDate"
             [formControl]="createForm.controls.bookPublishDate">
-          <span *ngIf="createForm.controls.bookPublishDate.invalid && createForm.controls.bookPublishDate.touched">Enter
-            Book PublishDate </span>
-        </div>
+          <span *ngIf="createForm.controls.bookPublishDate.invalid && createForm.controls.bookPublishDate.touched" style="color:red">Enter
+            Book PublishDate [yyyy-mm-dd]</span>
+        </div><br>
 
         <div class="form-group">
-          <label for="bookPrice">Price:</label>
+          <label for="bookPrice">Price  :  </label>
           <input placeholder="Price" name="bookPrice" class="form-control" id="bookPrice"
             [formControl]="createForm.controls.bookPrice">
-          <span *ngIf="createForm.controls.bookPrice.invalid && createForm.controls.bookPrice.touched">Enter Valid Book
+          <span *ngIf="createForm.controls.bookPrice.invalid && createForm.controls.bookPrice.touched" style="color:red">Enter Valid Book
             Price </span>
-        </div>
+        </div><br>
 
         <div class="form-group">
-          <label for="bookDescription">Description:</label>
+          <label for="bookDescription">Description  :  </label>
           <input placeholder="Description" name="bookDescription" class="form-control" id="bookDescription"
             [formControl]="createForm.controls.bookDescription">
-          <span *ngIf="createForm.controls.bookDescription.invalid && createForm.controls.bookDescription.touched">Enter
+          <span *ngIf="createForm.controls.bookDescription.invalid && createForm.controls.bookDescription.touched" style="color:red">Enter
             Book Description </span>
-        </div>
+        </div><br>
 
-        <button class="btn btn-success" (click)="createBook()">Create</button>
+        <button class="button button2" (click)="createBook()">Create</button>
       </form>
     </div>
   </div>

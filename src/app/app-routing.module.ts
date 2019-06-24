@@ -6,9 +6,9 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 import { BooksComponent } from './books/books.component';
 
 const routes: Routes = [
-  { path: '',redirectTo: '/book_dashboard',pathMatch: 'full' },
+  { path: '',redirectTo: '/admin_panel',pathMatch: 'full' },
   // { path: 'book_dashboard',component: BookListComponent },
-  { path: 'book_dashboard',component: BooksComponent},
+  { path: 'admin_panel',component: BooksComponent},
   { path: 'create',component: CreateBookComponent },
   { path: 'edit',component: EditBookComponent },
 ];

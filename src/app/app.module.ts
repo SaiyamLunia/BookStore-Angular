@@ -31,9 +31,11 @@ import { ReactiveFormsModule }    from '@angular/forms';
     Ng2SmartTableModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [ BookService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
